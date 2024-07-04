@@ -4,11 +4,13 @@ block_cipher = None
 
 hook_path = os.path.abspath('./hooks')  # Directory where your custom hook is located
 
-a = Analysis(['app.py'],
-             pathex=['.'],
+a = Analysis(['./app/__init__.py'],
+             pathex=['./app'],
              binaries=[],
              runtime_hooks=[],
+             hookspath=[hook_path],
              excludes=[],
+             datas=[('./app/templates', 'templates')],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
              cipher=block_cipher,
@@ -36,4 +38,4 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=True,
-               name='shuttle_hackathon_server')
+               name='app')
