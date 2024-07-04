@@ -1,0 +1,5 @@
+fastapi == 0.111.0
+langchain == "^0.2.6"
+langserve == "^0.2.2"
+langchain-anthropic = "^0.1.19"
+sse-starlette = "^2.1.2"
