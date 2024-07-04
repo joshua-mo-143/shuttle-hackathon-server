@@ -1,1 +1,4 @@
 flask == 3.0.3
+
+# dev
+pyinstaller == 6.8.0
