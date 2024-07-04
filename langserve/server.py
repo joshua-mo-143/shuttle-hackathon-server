@@ -5,7 +5,7 @@ state back and forth between server and client.
 from typing import List, Union
 
 from fastapi import FastAPI
-from langchain_anthropic.chat_models import ChatAnthropic
+from langchain.chat_models.openai import ChatOpenAI
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
@@ -27,7 +27,7 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-chain = prompt | ChatAnthropic(model_name="claude-3-sonnet-20240229")
+chain = prompt | ChatOpenAI(model_name="gpt-4o")
 
 
 class InputChat(BaseModel):
